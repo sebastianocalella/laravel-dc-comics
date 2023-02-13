@@ -14,4 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ComicController::class, 'index']);
+Route::get('/', [ComicController::class, 'index'])->name('home.index');
+
+Route::get('/comic', function () {
+    $comics = config('comics');
+    return view('comic', compact("comics"));
+})->name('comic');
