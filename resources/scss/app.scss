@@ -6,14 +6,15 @@
     background-size: 100%;
 }
 
-main{
+main>.container-fluid{
     background-image: url(../assets/images/jumbotron.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     border-top: 12px solid #303030;
+    padding: 0;
 }
 
-main>.container-fluid{
+main>.container-fluid>.container-fluid{
     background-color: #ffffffe4;
 }
 
