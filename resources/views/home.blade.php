@@ -13,7 +13,7 @@
                             <div class="my-card">
                                 <img src="{{$comic['thumb']}}" alt="comic image">
                                 <p>{{$comic['title']}}</p>
-                                <a href="comic-{{$loop->index}}" class="btn btn-sm btn-primary">info</a>
+                                <a href="{{route('comic.show', $comic->id)}}" class="btn btn-sm btn-primary">info</a>
                             </div>
                         </div>
                     @endforeach
