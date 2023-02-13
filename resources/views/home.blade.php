@@ -8,5 +8,8 @@
 </head>
 <body>
     <h1>comics:</h1>
+    @foreach ($comics as $comic)
+        <h1>{{$comic->title}}</h1>
+    @endforeach
 </body>
 </html>
