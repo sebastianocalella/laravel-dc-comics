@@ -10,9 +10,14 @@
 
 </head>
 <body>
-    <h1 class="mb-4">Comics Admin Hompage</h1>
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
+            <div class="col-5">
+                <h1 class="mb-4">Comics Admin Hompage</h1>
+            </div>
+            <div class="col">
+                <a href="" class="btn btn-primary btn-sm">add new comic</a>
+            </div>
             @foreach ($comics as $comic)
                 <div class="col-10">
                     <div class="row">
@@ -20,7 +25,7 @@
                             <p>{{$comic->title}}</p>
                         </div>
                         <div class="col-6 text-end">
-                            <button class="btn btn-sm btn-primary" href="{{route('admin.comics.show'), $comic->id}}">show</button>
+                            <a class="btn btn-sm btn-primary" href="{{route('admin.comics.show', $comic->id)}}">show</a>
                             <button class="btn btn-sm btn-warning">edit</button>
                             <button class="btn btn-sm btn-danger">delete</button>
                         </div>
