@@ -16,7 +16,7 @@
                 <h1 class="mb-4">Comics Admin Hompage</h1>
             </div>
             <div class="col">
-                <a href="" class="btn btn-primary btn-sm">add new comic</a>
+                <a href="{{ route('admin.comics.create') }}" class="btn btn-primary btn-sm">add new comic</a>
             </div>
             @foreach ($comics as $comic)
                 <div class="col-10">
