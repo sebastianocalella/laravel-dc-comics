@@ -31,6 +31,9 @@
                     <div class="col-12">
                         <p>sale date: {{$comic->sale_date}}</p>
                     </div>
+                    <div class="col-4">
+                        <a href="{{ route('admin.comics.index') }}" class="btn btn-primary">comics list</a>
+                    </div>
                 </div>
             </div>
         </section>
