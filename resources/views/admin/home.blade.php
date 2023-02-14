@@ -10,6 +10,25 @@
 
 </head>
 <body>
-    <h1>admin page</h1>
+    <h1 class="mb-4">Comics Admin Hompage</h1>
+    <div class="container">
+        <div class="row">
+            @foreach ($comics as $comic)
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-6">
+                            <p>{{$comic->title}}</p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <button class="btn btn-sm btn-primary">show</button>
+                            <button class="btn btn-sm btn-warning">edit</button>
+                            <button class="btn btn-sm btn-danger">delete</button>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            @endforeach
+        </div>
+    </div>
 </body>
 </html>
