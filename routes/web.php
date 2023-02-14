@@ -19,7 +19,10 @@ Route::get('/', [GuestComicController::class, 'index'])->name('home.index');
 
 Route::get('/comics/{comic}', [GuestComicController::class, 'show'])->name('comic.show');
 
+
+
 Route::prefix('admin')->name('admin.')->group(function (){
     Route::resource('comics', AdminComicController::class);
+    Route::get('/comics/{comic}', [AdminComicController::class, 'show'])->name('comics.show');
 });
 

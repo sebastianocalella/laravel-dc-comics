@@ -20,7 +20,7 @@
                             <p>{{$comic->title}}</p>
                         </div>
                         <div class="col-6 text-end">
-                            <button class="btn btn-sm btn-primary">show</button>
+                            <button class="btn btn-sm btn-primary" href="{{route('admin.comics.show'), $comic->id}}">show</button>
                             <button class="btn btn-sm btn-warning">edit</button>
                             <button class="btn btn-sm btn-danger">delete</button>
                         </div>
