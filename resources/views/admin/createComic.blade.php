@@ -14,7 +14,12 @@
             <div class="row justify-content-center">
                 <div class="col-8 card p-5 mt-5">
                     <div class="col-12">
-                        <form action="{{ route('admin.comics.store') }}" method="POST">
+                        @isset($comic)
+                            <form action="{{ route('admin.comics.update', $comic->id) }}" method="POST">
+                            @method('PUT')
+                        @else
+                            <form action="{{ route('admin.comics.store') }}" method="POST">
+                        @endisset
                             @csrf
                             <!--title-->
                             <div class="mb-3">
@@ -65,9 +70,15 @@
                                 </label>
                                 <input type="text" class="form-control" name="type" value="{{$comic->type ?? ''}}">
                             </div>
-                            <button type="submit" class="btn btn-primary">
-                                insert element
-                            </button>
+                            @isset($comic)
+                                <button type="submit" class="btn btn-warning">
+                                    modify element
+                                </button>
+                            @else
+                                <button type="submit" class="btn btn-primary">
+                                    insert element
+                                </button>
+                            @endisset
                         </form>
                     </div>
                 </div>

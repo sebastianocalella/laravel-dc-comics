@@ -67,6 +67,7 @@ class ComicController extends Controller
     public function edit(Comic $comic)
     {
         $actualComic = new Comic();
+        $actualComic->id = $comic['id'];
         $actualComic->title = $comic['title'];
         $actualComic->description = $comic['description'];
         $actualComic->thumb = $comic['thumb'];
@@ -87,7 +88,9 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $modelData = $request->all();
+        $comic = Comic::findOrfail($id);
+        $comic->update($modelData);
     }
 
     /**
