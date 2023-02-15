@@ -21,49 +21,49 @@
                                 <label class="form-label">
                                     title:
                                 </label>
-                                <input type="text" class="form-control" name="title"  >
+                                <input type="text" class="form-control" name="title" value="{{$comic->title ?? ''}}" >
                             </div>
                             <!--description-->
                             <div class="mb-3">
                                 <label class="form-label">
                                     description:
                                 </label>
-                                <textarea name="description" class="form-control" cols="30" rows="10"></textarea>
+                                <textarea name="description" class="form-control" cols="30" rows="10">{{$comic->description ?? ''}}</textarea>
                             </div>
                             <!--thumb-->
                             <div class="mb-3">
                                 <label class="form-label">
                                     thumb:
                                 </label>
-                                <input type="text" class="form-control" name="thumb"  >
+                                <input type="text" class="form-control" name="thumb" value="{{$comic->thumb ?? ''}}">
                             </div>
                             <!--price-->
                             <div class="mb-3">
                                 <label class="form-label">
                                     price:
                                 </label>
-                                <input type="text" class="form-control" name="price"  >
+                                <input type="text" class="form-control" name="price" value="{{$comic->price ?? ''}}">
                             </div>
                             <!--series-->
                             <div class="mb-3">
                                 <label class="form-label">
                                     series:
                                 </label>
-                                <input type="text" class="form-control" name="series"  >
+                                <input type="text" class="form-control" name="series" value="{{$comic->series ?? ''}}">
                             </div>
                             <!--sale_date-->
                             <div class="mb-3">
                                 <label class="form-label">
                                     sale_date:
                                 </label>
-                                <input type="text" class="form-control" name="sale_date"  >
+                                <input type="text" class="form-control" name="sale_date" value="{{$comic->sale_date ?? ''}}">
                             </div>
                             <!--type-->
                             <div class="mb-3">
                                 <label class="form-label">
                                     type:
                                 </label>
-                                <input type="text" class="form-control" name="type">
+                                <input type="text" class="form-control" name="type" value="{{$comic->type ?? ''}}">
                             </div>
                             <button type="submit" class="btn btn-primary">
                                 insert element
