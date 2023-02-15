@@ -66,17 +66,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        $actualComic = new Comic();
-        $actualComic->id = $comic['id'];
-        $actualComic->title = $comic['title'];
-        $actualComic->description = $comic['description'];
-        $actualComic->thumb = $comic['thumb'];
-        $actualComic->price = $comic['price'];
-        $actualComic->series = $comic['series'];
-        $actualComic->sale_date = $comic['sale_date'];
-        $actualComic->type = $comic['type'];
-
-        return view('admin.createComic', ['comic' => $actualComic]);
+        return view('admin.createComic', ['comic' => $comic]);
     }
 
     /**
