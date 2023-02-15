@@ -27,7 +27,11 @@
                         <div class="col-6 text-end">
                             <a class="btn btn-sm btn-primary" href="{{route('admin.comics.show', $comic->id)}}">show</a>
                             <a class="btn btn-sm btn-warning" href="{{route('admin.comics.edit', $comic)}}">edit</a>
-                            <form class="d-inline" action="{{ route('admin.comics.destroy', $comic->id) }}" method="POST">
+                            <form 
+                                class="d-inline delete-popup" 
+                                action="{{ route('admin.comics.destroy', $comic->id) }}" 
+                                method="POST"
+                                data-element-name="{{$comic->title}}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger">delete</button>
@@ -39,5 +43,7 @@
             @endforeach
         </div>
     </div>
+
+    @vite('resources/js/deleteElement.js')
 </body>
 </html>
