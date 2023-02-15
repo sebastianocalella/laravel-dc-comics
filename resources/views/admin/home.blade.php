@@ -26,7 +26,7 @@
                         </div>
                         <div class="col-6 text-end">
                             <a class="btn btn-sm btn-primary" href="{{route('admin.comics.show', $comic->id)}}">show</a>
-                            <button class="btn btn-sm btn-warning">edit</button>
+                            <a class="btn btn-sm btn-warning" href="{{route('admin.comics.edit', $comic)}}">edit</a>
                             <button class="btn btn-sm btn-danger">delete</button>
                         </div>
                     </div>
