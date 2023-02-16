@@ -49,6 +49,15 @@ class ComicController extends Controller
             'series'=>'required|max:100',
             'sale_date'=>'required|date',
             'type'=>'required|max:100'
+        ],
+        [
+            'title.required'=>'è obbligatoria la compilazione del campo title',
+            'description.required'=>'è obbligatoria la compilazione del campo description',
+            'thumb.required'=>'è obbligatoria la compilazione del campo thumb',
+            'price.required'=>'è obbligatoria la compilazione del campo price',
+            'series.required'=>'è obbligatoria la compilazione del campo series',
+            'sale_date.required'=>'è obbligatoria la compilazione del campo sale_date',
+            'type.required'=>'è obbligatoria la compilazione del campo type',
         ]);
 
         $newComic = new Comic();
@@ -98,9 +107,17 @@ class ComicController extends Controller
             'thumb'=>'required|max:3000', //maxvalue 11525
             'price'=>'required|numeric|max:999.99',
             'series'=>'required|min:3|max:100',
-            'series'=>'required|max:100',
             'sale_date'=>'required|date',
             'type'=>'required|max:100'
+        ],
+        [
+            'title.required'=>'è obbligatoria la compilazione del campo title',
+            'description.required'=>'è obbligatoria la compilazione del campo description',
+            'thumb.required'=>'è obbligatoria la compilazione del campo thumb',
+            'price.required'=>'è obbligatoria la compilazione del campo price',
+            'series.required'=>'è obbligatoria la compilazione del campo series',
+            'sale_date.required'=>'è obbligatoria la compilazione del campo sale_date',
+            'type.required'=>'è obbligatoria la compilazione del campo type',
         ]);
 
         $comic->update($modelData);
