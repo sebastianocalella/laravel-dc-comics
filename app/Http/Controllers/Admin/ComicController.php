@@ -91,6 +91,18 @@ class ComicController extends Controller
     {
         $modelData = $request->all();
         $comic = Comic::findOrfail($id);
+
+        $request->validate([
+            'title'=>'required|min:3|max:120',
+            'description'=>'required|min:30|max:2000',
+            'thumb'=>'required|max:3000', //maxvalue 11525
+            'price'=>'required|numeric|max:999.99',
+            'series'=>'required|min:3|max:100',
+            'series'=>'required|max:100',
+            'sale_date'=>'required|date',
+            'type'=>'required|max:100'
+        ]);
+
         $comic->update($modelData);
 
         return redirect()->route('admin.comics.show', $comic->id);
