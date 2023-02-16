@@ -84,11 +84,8 @@ class ComicController extends Controller
     public function store(Request $request)
     {
 
-        $data = $request->all();
-
-        $request->validate(ComicController::rules());
-
         $newComic = new Comic();
+        $data = $request->validate(ComicController::rules());
         $newComic->fill($data);
         $newComic->save();
 
@@ -126,11 +123,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $modelData = $request->all();
+        $modelData = $request->validate(ComicController::rules());
         $comic = Comic::findOrfail($id);
-
-        $request->validate(ComicController::rules());
-
         $comic->update($modelData);
 
         return redirect()->route('admin.comics.show', $comic->id);
