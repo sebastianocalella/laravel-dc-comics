@@ -40,6 +40,17 @@ class ComicController extends Controller
 
         $data = $request->all();
 
+        $request->validate([
+            'title'=>'required|min:3|max:120',
+            'description'=>'required|min:30|max:2000',
+            'thumb'=>'required|max:3000', //maxvalue 11525
+            'price'=>'required|numeric|max:999.99',
+            'series'=>'required|min:3|max:100',
+            'series'=>'required|max:100',
+            'sale_date'=>'required|date',
+            'type'=>'required|max:100'
+        ]);
+
         $newComic = new Comic();
         $newComic->fill($data);
         $newComic->save();

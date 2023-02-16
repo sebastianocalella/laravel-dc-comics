@@ -13,6 +13,15 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-8 card p-5 mt-5">
+                    @if ($errors->any())
+                    <div class="col-12 alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
                     <div class="col-12">
                         @isset($comic)
                             <form action="{{ route('admin.comics.update', $comic->id) }}" method="POST">
